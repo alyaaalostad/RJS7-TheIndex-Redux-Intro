@@ -1,5 +1,5 @@
 import React from "react";
-
+import { connect } from "react-redux";
 // Components
 import AuthorCard from "./AuthorCard";
 
@@ -15,5 +15,10 @@ function AuthorsList(props) {
     </div>
   );
 }
+const mapStateToProps = state => {
+  return {
+    authors: state.authors
+  };
+};
 
-export default AuthorsList;
+export default connect(mapStateToProps)(AuthorsList);
